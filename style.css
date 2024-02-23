@@ -1,0 +1,68 @@
+/* Desktop styles here */
+body {
+    background-color: #2C3F35;
+    color: #F5F5F5;
+}
+.desktop {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.desktopText {
+    width: 50%;
+    padding: 0% 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.desktopImage {
+    width: 50%;
+    margin: 1%;
+    background-image: url(Images/Tablet-landing-page.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.desktopTopSection {
+    margin-bottom: 10%;
+    text-align: center;
+}
+.desktopBottomSection {
+    text-align: center;
+}
+#desktopHeading {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    padding-bottom: 5%;
+}
+.desktopSubhead {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    font-style: italic;
+}
+.desktopP {
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+}
+.desktopList {
+    margin-top: 5%;
+}
+.desktopListItem {
+    padding-bottom: 1%;
+}
+.desktopIcon {
+    height: 20px;
+    width: auto;
+    margin-right: 2%;
+}
+.desktopCTA {
+    font-size: 28px !important;
+    margin-top: 10%;
+    text-align: center;
+}
+
+/* Mobile styles here */
