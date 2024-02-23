@@ -83,11 +83,13 @@ body {
     }
     
     /* Home page here */
+    
     /* Nav bar here */
     .navBar {
         width: 100%;
         height: 6%;
         min-height: 34px;
+        max-height: 50px;
         z-index: 3;
         background-color: #3F5D4C;
         position: fixed;
@@ -135,7 +137,7 @@ body {
     .weatherBar {
         color: #2C3F35;
         position: fixed;
-        top: clamp(42px, 7.5%, 8%);
+        top: clamp(42px, 7%, 7.5%);
         z-index: 4;
         width: 100%;
         display: flex;
@@ -153,17 +155,21 @@ body {
     }
     
     /* Bottom sheet here */
+    .bottomSheetContainer {
+        height: 90vh;
+    }
     .bottomSheet {
-        height: 56%;
+        height: clamp(400px, 76%, 520px);
         width: 100%;
-        position: fixed;
-        bottom: 0;
+        position: relative;
+        top: 53%;
         background-color: #749381;
         border-radius: 15px 15px 0 0;
         box-shadow: 0 -4px 7.2px 0 rgba(0, 0, 0, 0.25);
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow: hidden;
     }
     .dragBar {
         width: 13%;
@@ -187,14 +193,14 @@ body {
         background-color: rgba(44, 63, 53, 0.30);
         display: flex;
         flex-direction: row;
-        padding: 4px 3px;
+        padding: 3px 4px;
     }
     .tabText {
         font-family: "Inter", sans-serif;
         font-weight: 800;
         font-size: 12px;
         letter-spacing: .7px;
-        padding: 10px 8px;
+        padding: 9px 8px;
         text-align: center;
     }
     #myGarden {
@@ -206,21 +212,143 @@ body {
         flex-grow: 1.5;
     }
     .gardenPlantList {
-        border: 1px solid yellow;
         width: 85%;
         height: 89%;
     }
+    .gardenPlant {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5% 7%;
+        background-color: #F5F5F5;
+        border-radius: 15px;
+        box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+        margin-bottom: 3%;
+    }
+    .gardenPlantDetails {
+        width: 56%;
+        display: flex;
+        flex-direction: row;
+    }
+    .gardenPlantIcon {
+        width: 17%;
+        background-image: url(Images/image.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 3%;
+    }
+    .gardenPlantName {
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 15px;
+        color: #2C3F35;
+    }
+    .gardenActionIcon {
+        width: 9%;
+        background-image: url(Images/rightarrow.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
     
+    /* Main CTA here */
+    .mainCTAContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .mainCTA {
+        background-color: #EE854A;
+        width: 54px;
+        height: 54px;
+        z-index: 6;
+        position: fixed;
+        bottom: 27px;
+        box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ctaIcon {
+        width: 27px;
+        height: 27px;
+        background-image: url(Images/plus.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 7;
+    }
     /* Bottom nav here */
     .bottomNav {
-        height: 10%;
-        min-height: 57px;
+        height: 57px;
         width: 100%;
         position: fixed;
         bottom: 0;
         z-index: 2;
         background-color: #2C3F35;
         box-shadow: 0 -3px 4px 0 rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .navTab {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }   
+    .navTabText {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        color: #F5F5F5;
+    }
+    .navTabIcon {
+        width: 100%;
+        height: 45%;
+    } 
+    #navOverview {
+        margin-left: 3%;
+    }
+    #navTasks {
+        margin-right: 3%;
+    }
+    #navAdd {
+        margin-left: 2%;
+    }
+    #overviewIcon {
+        background-image: url(Images/home.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #mapIcon {
+        background-image: url(Images/map.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; 
+    }
+    #addIcon {
+        background-image: url(Images/plus.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; 
+        opacity: 0;
+    }
+    #plantsIcon {
+        background-image: url(Images/leaf.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;     
+    }
+    #tasksIcon {
+        background-image: url(Images/tasks.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; 
     }
     /* End home page */
 }
