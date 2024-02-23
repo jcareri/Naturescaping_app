@@ -83,14 +83,19 @@ body {
     }
     
     /* Home page here */
-    
+    .homePage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     /* Nav bar here */
     .navBar {
         width: 100%;
         height: 6%;
         min-height: 34px;
         max-height: 50px;
-        z-index: 3;
+        z-index: 2;
         background-color: #3F5D4C;
         position: fixed;
         top: 0;
@@ -138,7 +143,7 @@ body {
         color: #2C3F35;
         position: fixed;
         top: clamp(42px, 7%, 7.5%);
-        z-index: 4;
+        z-index: 3;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -157,6 +162,7 @@ body {
     /* Bottom sheet here */
     .bottomSheetContainer {
         height: 90vh;
+        width: 100%;
     }
     .bottomSheet {
         height: clamp(400px, 76%, 520px);
@@ -262,7 +268,7 @@ body {
         background-color: #EE854A;
         width: 54px;
         height: 54px;
-        z-index: 6;
+        z-index: 4;
         position: fixed;
         bottom: 27px;
         box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.15);
@@ -278,15 +284,40 @@ body {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        z-index: 7;
+        z-index: 5;
     }
+    
+    /* Tooltip here */
+    @keyframes homeTooltip {
+        0% {bottom: 80px;}
+        50% {bottom: 85px;}
+        0% {bottom: 80px;}
+    }
+    .homeTooltip {
+        position: fixed;
+        height: 31px;
+        width: 78px;
+        z-index: 6;
+        bottom: 80px;
+        background-image: url(Images/Dialog.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 8px;
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 12px;
+        text-align: center;
+        animation: homeTooltip 2s ease-in-out infinite;
+    }
+    
     /* Bottom nav here */
     .bottomNav {
         height: 57px;
         width: 100%;
         position: fixed;
         bottom: 0;
-        z-index: 2;
+        z-index: 1;
         background-color: #2C3F35;
         box-shadow: 0 -3px 4px 0 rgba(0, 0, 0, 0.25);
         display: flex;
@@ -351,4 +382,174 @@ body {
         background-position: center; 
     }
     /* End home page */
+    
+    /* Add plant page */
+    .addPlantScreen {
+        background-color: #749381;
+        position: fixed;
+        width: 100%;
+        z-index: 7;
+        top: 100%;
+    }
+    
+    /* Add nav bar */
+    .addNavBar {
+        width: 100%;
+        height: 6%;
+        min-height: 34px;
+        max-height: 50px;
+        background-color: #3F5D4C;
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+    .addBack {
+        width: 7.5%;
+        background-image: url(Images/back.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 3%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    .addLogo {
+        display: flex;
+        align-items: center;
+    }
+    .addAlerts {
+        width: 7.5%;
+        background-image: url(Images/bell.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 3%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        opacity: 0;
+    }
+    
+    /* Add main section */
+    .addMainSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        overflow: scroll;
+        position: relative;
+        top: 0;
+    }
+    .addPlantTitle {
+        font-family: "Inter", sans-serif;
+        font-weight: 900;
+        font-size: 18px;
+        letter-spacing: 1.2px;
+        margin-top: 6%; 
+        margin-bottom: 5%;
+    }
+    .searchFilter {
+        display: flex;
+        flex-direction: row;
+        width: 85%;
+        margin-bottom: 7%;
+    }
+    .search {
+        background-color: #F5F5F5;
+        height: 100%;
+        flex-grow: 3;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+    }
+    .searchIcon {
+        width: 12%;
+        background-image: url(Images/search.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;   
+        margin-left: 7%;
+        margin-right: 3%;
+    }
+    .searchText {
+        font-family: "Inter", sans-serif;
+        font-weight: 200;
+        font-size: 12px;
+        color: #3F5D4C;
+        display: flex;
+        align-items: center;
+    }
+    .filter {
+        flex-grow: 1;
+        background-color: #C3DDAA;
+        color: #3F5D4C;
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 12px;
+        padding: 3% 4%;
+        border-radius: 25px;
+        text-align: center;
+        margin-left: 3%;
+    }
+
+    /* Add plant list */
+    .addPlantList {
+        width: 85%;
+        margin-bottom: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .addPlantItem {
+        width: 85%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5% 7%;
+        background-color: #F5F5F5;
+        border-radius: 15px;
+        box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+        margin-bottom: 3%;
+    }
+    .addPlantDetails {
+        width: 56%;
+        display: flex;
+        flex-direction: row;
+    }
+    .addPlantIcon {
+        width: 17%;
+        background-image: url(Images/image.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 3%; 
+    }
+    .addPlantName {
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 15px;
+        color: #2C3F35;
+    }
+    .addActionIcon {
+        width: 9%;
+        background-image: url(Images/plusgreen.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .loading {
+        width: 24px;
+        height: 24px;
+        background-image: url(Images/loading.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: loading 2s ease-in-out infinite;
+    }
+    @keyframes loading {
+        50% {transform: rotate(180deg)}
+        100% {transform: rotate(360deg)}
+    }
 }
