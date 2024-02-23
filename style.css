@@ -81,14 +81,48 @@ body {
         display: inherit;
         height: 100vh;
     }
+    
+    /* Home page here */
+    /* Nav bar here */
     .navBar {
         width: 100%;
         height: 6%;
+        min-height: 34px;
         z-index: 3;
         background-color: #3F5D4C;
         position: fixed;
         top: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
+    .settings {
+        width: 7.5%;
+        background-image: url(Images/settings.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 3%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    .alerts {
+        width: 7.5%;
+        background-image: url(Images/bell.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 3%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    /* Garden and weather here */
     .gardenImage {
         width: 100%;
         height: 67%;
@@ -98,21 +132,95 @@ body {
         position: fixed;
         top: 0;
     }
+    .weatherBar {
+        color: #2C3F35;
+        position: fixed;
+        top: clamp(42px, 7.5%, 8%);
+        z-index: 4;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .currentWeather {
+        background-color: #C3DDAA;
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 11px;
+        text-align: center;
+        padding: 5px 20px;
+        border-radius: 15px;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+    }
+    
+    /* Bottom sheet here */
     .bottomSheet {
         height: 56%;
         width: 100%;
         position: fixed;
         bottom: 0;
-        z-index: 1;
         background-color: #749381;
         border-radius: 15px 15px 0 0;
+        box-shadow: 0 -4px 7.2px 0 rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+    .dragBar {
+        width: 13%;
+        height: 5px;
+        margin-top: 2%;
+        margin-bottom: 4%;
+        background-color: #C0C4BF;
+        border-radius: 10px;
+    }
+    .greeting {
+        font-family: "Inter", sans-serif;
+        font-weight: 900;
+        font-size: 15px;
+        letter-spacing: 1px;
+        margin-bottom: 4%;
+    }
+    .tabs {
+        width: 85%;
+        margin-bottom: 5%;
+        border-radius: 20px;
+        background-color: rgba(44, 63, 53, 0.30);
+        display: flex;
+        flex-direction: row;
+        padding: 4px 3px;
+    }
+    .tabText {
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: .7px;
+        padding: 10px 8px;
+        text-align: center;
+    }
+    #myGarden {
+        background-color: #2C3F35;
+        border-radius: 20px;
+        flex-grow: 1;
+    }
+    #myTasks {
+        flex-grow: 1.5;
+    }
+    .gardenPlantList {
+        border: 1px solid yellow;
+        width: 85%;
+        height: 89%;
+    }
+    
+    /* Bottom nav here */
     .bottomNav {
         height: 10%;
+        min-height: 57px;
         width: 100%;
         position: fixed;
         bottom: 0;
         z-index: 2;
         background-color: #2C3F35;
+        box-shadow: 0 -3px 4px 0 rgba(0, 0, 0, 0.25);
     }
+    /* End home page */
 }
