@@ -69,10 +69,11 @@ body {
 }
 
 /* Mobile styles here */
-@media only screen and (max-width: 743px) {
+@media only screen and (max-width: 539px) {
     body {
         margin: 0;
         padding: 0;
+        background-color: #FFFFFF;
     }
     .desktop {
         display: none;
@@ -132,10 +133,11 @@ body {
     /* Garden and weather here */
     .gardenImage {
         width: 100%;
-        height: 67%;
-        background-image: url(Images/garden.png);
+        height: 100%;
+        background-image: url(Images/gardenimage.png);
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
         position: fixed;
         top: 0;
     }
@@ -168,7 +170,7 @@ body {
         height: clamp(400px, 76%, 520px);
         width: 100%;
         position: relative;
-        top: 53%;
+        top: 120%;
         background-color: #749381;
         border-radius: 15px 15px 0 0;
         box-shadow: 0 -4px 7.2px 0 rgba(0, 0, 0, 0.25);
@@ -276,6 +278,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+		cursor: pointer;
     }
     .ctaIcon {
         width: 27px;
@@ -295,7 +298,8 @@ body {
     }
     .homeTooltip {
         position: fixed;
-        height: 31px;
+        display: none;
+        height: 36px;
         width: 78px;
         z-index: 6;
         bottom: 80px;
@@ -303,7 +307,7 @@ body {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        padding-top: 8px;
+        padding-top: 10px;
         font-family: "Inter", sans-serif;
         font-weight: 800;
         font-size: 12px;
@@ -395,7 +399,7 @@ body {
     /* Add nav bar */
     .addNavBar {
         width: 100%;
-        height: 6%;
+        height: 6vh;
         min-height: 34px;
         max-height: 50px;
         background-color: #3F5D4C;
@@ -539,6 +543,9 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
+	#plantBasil {
+		cursor: pointer;
+	}
     .loading {
         width: 24px;
         height: 24px;
@@ -552,4 +559,159 @@ body {
         50% {transform: rotate(180deg)}
         100% {transform: rotate(360deg)}
     }
+    
+    /* Tooltip here */
+    @keyframes addTooltip {
+        0% {top: clamp(85px, 12%, 105px);}
+        50% {top: clamp(80px, 11.3%, 100px);}
+        0% {top: clamp(85px, 12%, 105px);}
+    }
+    .addTooltip {
+        height: 36px;
+        width: 78px;
+        background-image: url(Images/Dialog.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 10px;
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 12px;
+        text-align: center;
+    }
+    .addTooltipContainer {
+        position: absolute;
+        display: none;
+        top: clamp(85px, 12%, 105px);
+        right: clamp(27px, 7%, 35px);
+        animation: addTooltip 2s ease-in-out infinite;
+    }
+    
+    /* Drag elements */
+    .dragTarget {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 6%;
+        width: clamp(0px, 15%, 57px);
+        background-color: rgba(245, 245, 245, 0.70);
+        position: fixed;
+        border-radius: 100%;
+        box-shadow: 0 2px 5px 2px rgba(245, 245, 245, 0.50);
+    }
+    #circle1 {
+        left: clamp(55px, 13%, 100px);
+        bottom: 36.3%;
+    }
+    #circle2 {
+        left: clamp(89px, 26%, 500px);
+        bottom: 39.7%;
+    }
+    #circle3 {
+        left: 41%;
+        bottom: 43.7%;
+    }
+    #circleDefault {
+        height: 72px;
+        width: 72px;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+        bottom: 40px;
+    }
+    .plantTile {
+        background-color: #2C3F35;
+        width: 72px;
+        height: 72px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 1);
+		cursor: grab;
+    }
+    .plantTileIcon {
+        width: 50px;
+        height: 50px;
+        background-image: url(Images/imagewhite.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .plantTileText {
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 12px;
+    }
+   @keyframes dragTooltip {
+        0% {bottom: 102px;}
+        50% {bottom: 107px;}
+        0% {bottom: 102px;}
+    }
+    .dragTooltip {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 85px;
+        width: 206px;
+        bottom: 102px;
+        right: 8%;
+        background-image: url(Images/dragdialog.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 12px;
+        text-align: center;
+        animation: dragTooltip 2s ease-in-out infinite;
+    }
+    .dragTooltipText {
+        width: 128px;
+        height: 45px;
+        margin-top: 14px;
+    }
+    .checkmark {
+        position: fixed;
+		display: none;
+        height: 55px;
+        width: 55px;
+        left: clamp(40px, 9%, 100px);
+        bottom: 39%;
+        background-image: url(Images/checkmark.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+	.endScreen {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: #2C3F35;
+		padding: 25px 40px; 
+		color: #F5F5F5;
+		border-radius: 20px;
+		font-family: "Inter", sans-serif;
+		font-weight: 800;
+		font-size: 18px;
+		box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+	}
+	button {
+		border-radius: 12px;
+		border: none;
+		padding: 10px 20px;
+		margin-top: 15px;
+		background-color: #C3DDAA;
+		color: #2C3F35;
+		font-family: "Inter", sans-serif;
+		font-weight: 800;
+		font-size: 14px;
+		box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+		cursor: pointer;
+	}
 }

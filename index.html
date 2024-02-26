@@ -6,6 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="style.css">
     </head>
     
@@ -111,6 +112,21 @@
                 <div class="navTabText">tasks</div>
             </div>
         </div>
+        <div class="dragTooltip">
+            <div class="dragTooltipText">drag and drop! Here's a spot where it'll work well.</div>
+        </div>
+        <div class="dragTarget" id="circleDefault">
+            <div class="plantTile">
+                <div class="plantTileIcon"></div>
+                <div class="plantTileText">basil</div>
+            </div>
+        </div>
+        <div class="dragTarget" id="circle1"></div>
+        <div class="checkmark"></div>
+		<div class="endScreen">
+			<div>That's all, folks!</div>
+			<button type="button">Back to start</button>
+		</div>
     </div>
     <div class="addPlantScreen">
         <div class="addNavBar">
@@ -119,6 +135,9 @@
             <div class="addAlerts"></div>
         </div>
         <div class="addMainSection">
+            <div class="addTooltipContainer basil">
+                <div class="addTooltip">pick me</div>
+            </div>
             <div class="addPlantTitle">add plant</div>
             <div class="searchFilter">
                 <div class="search">
@@ -128,7 +147,7 @@
                 <div class="filter">filter</div>
             </div>
             <div class="addPlantList">
-                <div class="addPlantItem">
+                <div class="addPlantItem basil" id="plantBasil">
                     <div class="addPlantDetails">
                         <div class="addPlantIcon"></div>
                         <div class="addPlantName">basil</div>
@@ -218,6 +237,7 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 <script src="interactions.js"></script>
     
 </body>
