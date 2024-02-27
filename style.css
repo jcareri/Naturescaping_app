@@ -7,10 +7,12 @@ body {
     display: flex;
     flex-direction: row;
     height: auto;
+	justify-content: center;
+	margin: 5%;
 }
 .desktopText {
-    width: 40%;
-    padding: 5% 8%;
+    width: auto;
+	padding: 4%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,8 +20,6 @@ body {
 }
 .desktopImage {
     width: 60%;
-    margin-top: 5%;
-	padding-right: 8%;
     background-image: url(Images/Desktop-landing-page.png);
     background-size: contain;
     background-repeat: no-repeat;
