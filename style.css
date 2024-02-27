@@ -6,11 +6,11 @@ body {
 .desktop {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: auto;
 }
 .desktopText {
     width: 40%;
-    padding: 0% 8%;
+    padding: 5% 8%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,8 +18,8 @@ body {
 }
 .desktopImage {
     width: 60%;
-    margin: 1%;
-	padding-right: 3%;
+    margin-top: 5%;
+	padding-right: 8%;
     background-image: url(Images/Desktop-landing-page.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -69,6 +69,22 @@ body {
     display: none;
 }
 
+/* Tablet styles here */
+@media only screen and (max-width: 768px) {
+#desktopHeading {
+    font-size: 75px;
+}
+.desktopSubhead {
+    font-size: 14px;
+}
+.desktopP {
+    font-size: 15px;
+}
+.desktopCTA {
+    font-size: 18px !important;
+}
+}
+	
 /* Mobile styles here */
 @media only screen and (max-width: 539px) {
     body {
@@ -117,8 +133,13 @@ body {
         margin-bottom: 1%;
     }
     .logo {
+		background-image: url(Images/Logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
         display: flex;
         align-items: center;
+		width: 16%;
     }
     .alerts {
         width: 7.5%;
@@ -241,7 +262,7 @@ body {
     }
     .gardenPlantIcon {
         width: 17%;
-        background-image: url(Images/image.png);
+        background-image: url(Images/plantgreen.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -422,8 +443,13 @@ body {
         margin-bottom: 1%;
     }
     .addLogo {
+        background-image: url(Images/Logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
         display: flex;
         align-items: center;
+		width: 16%;
     }
     .addAlerts {
         width: 7.5%;
@@ -525,7 +551,7 @@ body {
     }
     .addPlantIcon {
         width: 17%;
-        background-image: url(Images/image.png);
+        background-image: url(Images/plantgreen.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -604,6 +630,7 @@ body {
     #circle1 {
         left: clamp(55px, 13%, 100px);
         bottom: 36.3%;
+		cursor: pointer;
     }
     #circle2 {
         left: clamp(89px, 26%, 500px);
@@ -613,16 +640,10 @@ body {
         left: 41%;
         bottom: 43.7%;
     }
-    #circleDefault {
-        height: 72px;
-        width: 72px;
-        border-radius: 0;
-        box-shadow: none;
-        background-color: transparent;
-        bottom: 40px;
-    }
     .plantTile {
+		position: fixed;
         background-color: #2C3F35;
+		bottom: 40px;
         width: 72px;
         height: 72px;
         border-radius: 15px;
@@ -636,7 +657,7 @@ body {
     .plantTileIcon {
         width: 50px;
         height: 50px;
-        background-image: url(Images/imagewhite.png);
+        background-image: url(Images/leaf.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -647,9 +668,9 @@ body {
         font-size: 12px;
     }
    @keyframes dragTooltip {
-        0% {bottom: 102px;}
-        50% {bottom: 107px;}
-        0% {bottom: 102px;}
+        0% {bottom: 108px;}
+        50% {bottom: 113px;}
+        0% {bottom: 108px;}
     }
     .dragTooltip {
         position: fixed;
@@ -658,7 +679,7 @@ body {
         align-items: center;
         height: 85px;
         width: 206px;
-        bottom: 102px;
+        bottom: 108px;
         right: 8%;
         background-image: url(Images/dragdialog.png);
         background-size: contain;

@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $(".dragTooltip").hide();
     $(".dragTarget").hide();
+	$(".plantTile").hide();
 	$(".endScreen").hide();
 	$(".bottomSheet").delay(600).animate({top: "53%"}, 1400);
 	$(".gardenImage").delay(1500).animate({height: "67%"});
@@ -34,6 +35,7 @@ $( ".basil" ).on( "click", function() {
     $(".bottomSheet").delay(400).hide();
     $(".dragTarget").delay(800).fadeIn(800);
     $(".dragTooltip").delay(800).fadeIn(800);
+	$(".plantTile").delay(800).fadeIn(800);
     console.log("ready for drag");
 });
 
@@ -59,8 +61,8 @@ $( ".plantTile" ).draggable({
         $(".plantTileText").animate({"font-size": "8px"}, 800);
       },
       stop: function() {
-        $(".plantTile").delay(300).fadeOut(700);
-        $(".checkmark").delay(900).fadeIn(800);
+        $(".plantTile").fadeOut(100);
+        $(".checkmark").delay(400).fadeIn(800);
 		$(".checkmark").delay(1200).fadeOut(500);
 		$("#circle1").delay(3300).fadeOut(500);
 		$('.gardenImage')
@@ -69,9 +71,30 @@ $( ".plantTile" ).draggable({
     			$(this).css('background-image', 'url(Images/withbasil.png)'); 
     			next(); 
   			});
-		$(".endScreen").delay(6000).fadeIn(300);
+		$(".endScreen").delay(5800).fadeIn(300);
       }
     });
+
+
+$( "#circle1" ).on( "click", function() {
+    $(".dragTooltip").fadeOut(300);
+	$(".plantTile").animate({"width": "45px", "height": "45px", "border-radius": "10px"}, 800);
+    $(".plantTileIcon").animate({"width": "25px", "height": "25px"}, 800);
+    $(".plantTileText").animate({"font-size": "8px"}, 800);
+	$(".plantTile").animate({"left": "13%", "bottom": "36.3%"}, 800);
+	$(".plantTile").fadeOut(700);
+    $(".checkmark").delay(1700).fadeIn(800);
+	$(".checkmark").delay(1700).fadeOut(500);
+	$("#circle1").delay(4100).fadeOut(500);
+	$('.gardenImage')
+  		.delay(5000)
+  		.queue(function (next) { 
+    		$(this).css('background-image', 'url(Images/withbasil.png)'); 
+    		next(); 
+  		});
+	$(".endScreen").delay(6300).fadeIn(300);
+});
+
 
 $( ".endScreen" ).on( "click", function() {
     location.reload(true);
